@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | 大山内装</title>
+  <meta name="description" content="大山内装へのお問い合わせ。内装工事・クロス張替・床材施工など、お気軽にご相談ください。無料現地確認・無料見積り受付中。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --brown: #3d2b1f; --brown-dark: #231510; --brown-mid: #5a3d2b;
+      --accent: #c8a96e; --accent-light: #e0c48a; --accent-pale: #fdf8f0;
+      --white: #ffffff; --off-white: #f7f4f0; --gray-light: #ebe7e2;
+      --gray: #8a7e75; --text: #2a1f17; --text-light: #5a4a3f;
+      --serif: 'Noto Serif JP', serif; --sans: 'Noto Sans JP', sans-serif; --display: 'Oswald', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--text); background: var(--white); overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* HEADER */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--brown-dark); box-shadow: 0 2px 20px rgba(0,0,0,0.55); }
+    .site-header::after { content: ''; display: block; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent)); }
+    .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 66px; }
+    .logo a { display: flex; align-items: center; gap: 12px; color: var(--white); }
+    .logo-mark { width: 44px; height: 44px; background: var(--accent); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .logo-mark svg { width: 28px; height: 28px; }
+    .logo-text .company { font-family: var(--serif); font-size: 15px; font-weight: 700; color: white; letter-spacing: 0.05em; }
+    .logo-text .tagline { font-size: 10px; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; margin-top: 2px; }
+    .global-nav ul { display: flex; list-style: none; gap: 2px; }
+    .global-nav a { display: block; padding: 8px 12px; color: rgba(255,255,255,0.78); font-size: 13px; font-weight: 500; letter-spacing: 0.04em; border-radius: 3px; transition: all 0.2s; }
+    .global-nav a:hover, .global-nav a.active { color: var(--accent-light); background: rgba(255,255,255,0.07); }
+    .header-cta { display: flex; align-items: center; gap: 16px; }
+    .header-tel { color: white; text-align: right; line-height: 1.2; }
+    .header-tel .tel-label { font-size: 10px; color: rgba(255,255,255,0.5); }
+    .header-tel .tel-num { font-family: var(--display); font-size: 20px; font-weight: 600; letter-spacing: 0.05em; color: var(--accent-light); }
+    .btn-header { background: var(--accent); color: var(--brown-dark); font-size: 12px; font-weight: 700; padding: 10px 18px; border-radius: 3px; letter-spacing: 0.05em; white-space: nowrap; transition: all 0.2s; }
+    .btn-header:hover { background: var(--accent-light); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+    .hamburger span { width: 24px; height: 2px; background: white; border-radius: 2px; display: block; }
+    .mobile-menu { display: none; position: fixed; inset: 0; top: 69px; background: var(--brown-dark); z-index: 999; padding: 40px 24px; flex-direction: column; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { display: block; padding: 18px 0; color: rgba(255,255,255,0.85); font-size: 17px; font-family: var(--serif); border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .mobile-menu .m-tel { margin-top: 28px; color: var(--accent-light); font-family: var(--display); font-size: 26px; font-weight: 600; }
+
+    /* PAGE HERO */
+    .page-hero { margin-top: 69px; background: linear-gradient(135deg, var(--brown-dark), var(--brown)); padding: 72px 24px 64px; text-align: center; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(-45deg, transparent, transparent 6px, rgba(200,169,110,0.04) 6px, rgba(200,169,110,0.04) 7px); }
+    .page-hero-inner { position: relative; z-index: 1; }
+    .page-hero-en { font-size: 11px; font-weight: 700; letter-spacing: 0.28em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+    .page-hero-title { font-family: var(--serif); font-size: clamp(26px, 4vw, 42px); font-weight: 700; color: white; letter-spacing: 0.08em; margin-bottom: 14px; }
+    .page-hero-desc { color: rgba(255,255,255,0.75); font-size: 15px; line-height: 1.85; max-width: 560px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; justify-content: center; margin-top: 24px; font-size: 12px; color: rgba(255,255,255,0.5); }
+    .breadcrumb a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--accent-light); }
+
+    /* CONTACT INFO */
+    .section-contact-info { padding: 72px 0 0; background: var(--off-white); }
+    .contact-info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    .contact-info-card {
+      background: white; border-radius: 8px; padding: 36px 32px;
+      box-shadow: 0 3px 20px rgba(61,43,31,0.08);
+      text-align: center; border-top: 4px solid var(--accent);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .contact-info-card:hover { transform: translateY(-4px); box-shadow: 0 10px 32px rgba(61,43,31,0.14); }
+    .contact-info-icon { font-size: 48px; margin-bottom: 16px; }
+    .contact-info-label { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+    .contact-info-title { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--brown); margin-bottom: 12px; }
+    .contact-info-tel { font-family: var(--display); font-size: 36px; font-weight: 700; color: var(--brown); letter-spacing: 0.05em; line-height: 1; }
+    .contact-info-tel a { color: var(--accent); }
+    .contact-info-tel a:hover { color: var(--accent-light); }
+    .contact-info-sub { font-size: 13px; color: var(--gray); margin-top: 8px; }
+
+    /* FORM */
+    .section-form { padding: 72px 0 88px; background: var(--off-white); }
+    .form-container { max-width: 720px; margin: 0 auto; }
+    .section-head { text-align: center; margin-bottom: 48px; }
+    .section-en-label { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+    .section-title { font-family: var(--serif); font-size: clamp(22px, 3vw, 30px); font-weight: 700; color: var(--brown); line-height: 1.45; letter-spacing: 0.05em; }
+    .section-title span { color: var(--accent); }
+    .divider { width: 50px; height: 3px; background: var(--accent); margin: 14px auto 0; border-radius: 2px; }
+    .form-card {
+      background: white; border-radius: 10px; padding: 48px;
+      box-shadow: 0 4px 32px rgba(61,43,31,0.1);
+    }
+    .form-group { margin-bottom: 24px; }
+    .form-label {
+      display: block; font-size: 14px; font-weight: 700; color: var(--brown);
+      margin-bottom: 8px; letter-spacing: 0.03em;
+    }
+    .form-label .required {
+      display: inline-block; background: var(--accent); color: var(--brown-dark);
+      font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 2px;
+      margin-left: 8px; letter-spacing: 0.05em; vertical-align: middle;
+    }
+    .form-label .optional {
+      display: inline-block; background: var(--gray-light); color: var(--gray);
+      font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 2px;
+      margin-left: 8px; letter-spacing: 0.05em; vertical-align: middle;
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: 13px 16px; border: 2px solid var(--gray-light);
+      border-radius: 5px; font-size: 15px; font-family: var(--sans);
+      color: var(--text); background: white;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--accent); box-shadow: 0 0 0 3px rgba(200,169,110,0.18);
+    }
+    .form-textarea { resize: vertical; min-height: 160px; line-height: 1.7; }
+    .form-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a7e75' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 44px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .form-note { font-size: 12.5px; color: var(--gray); margin-top: 8px; line-height: 1.6; }
+    .form-privacy { background: var(--accent-pale); border: 1px solid rgba(200,169,110,0.3); border-radius: 6px; padding: 16px 20px; font-size: 13px; color: var(--text-light); line-height: 1.75; margin-bottom: 32px; }
+    .form-submit-wrap { text-align: center; }
+    .btn-submit {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--brown); color: white; border: none;
+      padding: 18px 56px; font-size: 16px; font-weight: 700; font-family: var(--sans);
+      border-radius: 4px; letter-spacing: 0.08em; cursor: pointer;
+      transition: all 0.25s;
+    }
+    .btn-submit:hover { background: var(--brown-mid); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(61,43,31,0.35); }
+    .btn-submit svg { flex-shrink: 0; }
+
+    /* FOOTER */
+    .site-footer { background: var(--brown-dark); color: rgba(255,255,255,0.7); padding: 64px 0 0; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand .logo-text .company { color: white; font-size: 17px; }
+    .footer-brand .logo-text .tagline { color: rgba(255,255,255,0.5); }
+    .footer-about { font-size: 13.5px; line-height: 1.85; margin-top: 16px; color: rgba(255,255,255,0.6); }
+    .footer-info { margin-top: 20px; font-size: 13px; line-height: 2; }
+    .footer-info span { color: rgba(255,255,255,0.4); margin-right: 8px; }
+    .footer-nav-title { font-family: var(--serif); font-size: 14px; font-weight: 700; color: white; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(200,169,110,0.3); }
+    .footer-nav-list { list-style: none; }
+    .footer-nav-list li { margin-bottom: 10px; }
+    .footer-nav-list a { font-size: 13.5px; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+    .footer-nav-list a:hover { color: var(--accent-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 20px 24px; text-align: center; font-size: 12px; color: rgba(255,255,255,0.4); }
+    .footer-bottom::before { content: ''; display: block; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent)); margin-bottom: 20px; }
+
+    /* ANIMATION */
+    .fade-up { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .global-nav, .header-cta { display: none; }
+      .hamburger { display: flex; }
+      .contact-info-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-card { padding: 32px 24px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 600px) {
+      .contact-info-tel { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="index.html">
+        <div class="logo-mark">
+          <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="22" height="22" rx="2" fill="none" stroke="#3d2b1f" stroke-width="2"/>
+            <line x1="3" y1="10" x2="25" y2="10" stroke="#3d2b1f" stroke-width="2"/>
+            <line x1="9" y1="3" x2="9" y2="25" stroke="#3d2b1f" stroke-width="1.5"/>
+            <rect x="12" y="14" width="9" height="8" rx="1" fill="#3d2b1f"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <div class="company">大山内装</div>
+          <div class="tagline">OYAMA INTERIOR CO.</div>
+        </div>
+      </a>
+    </div>
+    <nav class="global-nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="service.html">施工案内</a></li>
+        <li><a href="works.html">施工実績</a></li>
+        <li><a href="company.html">会社概要</a></li>
+        <li><a href="recruit.html">採用情報</a></li>
+        <li><a href="contact.html" class="active">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <div class="header-tel">
+        <div class="tel-label">お気軽にご相談ください</div>
+        <div class="tel-num">080-1071-4574</div>
+      </div>
+      <a href="contact.html" class="btn-header">無料見積</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="toggleMenu()">HOME</a>
+  <a href="service.html" onclick="toggleMenu()">施工案内</a>
+  <a href="works.html" onclick="toggleMenu()">施工実績</a>
+  <a href="company.html" onclick="toggleMenu()">会社概要</a>
+  <a href="recruit.html" onclick="toggleMenu()">採用情報</a>
+  <a href="contact.html" onclick="toggleMenu()">お問い合わせ</a>
+  <div class="m-tel">080-1071-4574</div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner fade-up">
+    <div class="page-hero-en">CONTACT</div>
+    <h1 class="page-hero-title">お問い合わせ</h1>
+    <p class="page-hero-desc">クロス張替・床材施工・店舗内装など、どんな些細なご相談もお気軽にどうぞ。現地確認・見積りは無料です。</p>
+    <div class="breadcrumb">
+      <a href="index.html">HOME</a>
+      <span>›</span>
+      <span>お問い合わせ</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT INFO -->
+<section class="section-contact-info">
+  <div class="container">
+    <div class="contact-info-grid fade-up">
+      <div class="contact-info-card">
+        <div class="contact-info-icon">📞</div>
+        <div class="contact-info-label">PHONE</div>
+        <h2 class="contact-info-title">お電話でのお問い合わせ</h2>
+        <div class="contact-info-tel">
+          <a href="tel:08010714574">080-1071-4574</a>
+        </div>
+        <p class="contact-info-sub">受付時間：8:00〜18:00（日曜・祝日除く）</p>
+        <p style="margin-top:16px; font-size:13.5px; color:var(--text-light); line-height:1.75;">お急ぎの場合はお電話が確実です。代表の大山が直接対応いたします。</p>
+      </div>
+      <div class="contact-info-card">
+        <div class="contact-info-icon">✉️</div>
+        <div class="contact-info-label">WEB FORM</div>
+        <h2 class="contact-info-title">WEBフォームでのお問い合わせ</h2>
+        <p style="font-size:14px; color:var(--text-light); line-height:1.85; margin-bottom:16px;">下記フォームからご入力ください。24時間受付可能です。通常2営業日以内にご連絡いたします。</p>
+        <a href="#form" style="display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--brown-dark);font-size:14px;font-weight:700;padding:12px 24px;border-radius:3px;letter-spacing:0.05em;transition:all 0.2s;" onmouseover="this.style.background='#e0c48a'" onmouseout="this.style.background='var(--accent)'">
+          フォームへ移動 ↓
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="section-form" id="form">
+  <div class="container">
+    <div class="form-container">
+      <div class="section-head fade-up">
+        <div class="section-en-label">INQUIRY FORM</div>
+        <h2 class="section-title">お問い合わせ<span>フォーム</span></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="form-card fade-up">
+        <form action="#" method="post">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">お名前<span class="required">必須</span></label>
+              <input class="form-input" type="text" id="name" name="name" placeholder="例：大山 太郎" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="kana">フリガナ<span class="optional">任意</span></label>
+              <input class="form-input" type="text" id="kana" name="kana" placeholder="例：オオヤマ タロウ">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="tel">電話番号<span class="required">必須</span></label>
+              <input class="form-input" type="tel" id="tel" name="tel" placeholder="例：080-1234-5678" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">メールアドレス<span class="optional">任意</span></label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="例：example@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="address">お住まい（市区町村）<span class="optional">任意</span></label>
+            <input class="form-input" type="text" id="address" name="address" placeholder="例：越谷市、草加市など">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="type">お問い合わせ種別<span class="required">必須</span></label>
+            <select class="form-select" id="type" name="type" required>
+              <option value="" disabled selected>選択してください</option>
+              <option value="cross">クロス張替・壁紙工事</option>
+              <option value="floor">床材施工・フローリング工事</option>
+              <option value="lgs">軽量鉄骨下地・ボード工事</option>
+              <option value="store">店舗・オフィス内装工事</option>
+              <option value="reform">住宅フルリフォーム</option>
+              <option value="genjo">原状回復工事</option>
+              <option value="recruit">採用に関するご相談</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">お問い合わせ内容<span class="required">必須</span></label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="ご希望の工事内容・場所・時期・ご予算など、できるだけ詳しくお聞かせください。" required></textarea>
+            <p class="form-note">※現地確認が必要な場合はご連絡の上、日程を調整いたします（無料）</p>
+          </div>
+          <div class="form-privacy">
+            <strong style="color:var(--brown);">個人情報の取り扱いについて</strong><br>
+            ご入力いただいた個人情報は、お問い合わせへの返答・お見積りの作成等、お客様への対応のみに使用いたします。第三者への提供は行いません。
+          </div>
+          <div class="form-submit-wrap">
+            <button type="submit" class="btn-submit">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+              この内容で送信する
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+            <div class="logo-mark">
+              <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="3" width="22" height="22" rx="2" fill="none" stroke="#3d2b1f" stroke-width="2"/>
+                <line x1="3" y1="10" x2="25" y2="10" stroke="#3d2b1f" stroke-width="2"/>
+                <line x1="9" y1="3" x2="9" y2="25" stroke="#3d2b1f" stroke-width="1.5"/>
+                <rect x="12" y="14" width="9" height="8" rx="1" fill="#3d2b1f"/>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <div class="company">大山内装</div>
+              <div class="tagline">OYAMA INTERIOR CO.</div>
+            </div>
+          </a>
+        </div>
+        <p class="footer-about">埼玉県越谷市を拠点に、クロス張替・床材施工・軽量鉄骨下地・店舗内装まで幅広く対応する内装仕上工事専門店です。</p>
+        <div class="footer-info">
+          <div><span>📍</span>〒343-0847 埼玉県越谷市大間野町４－３４３－１</div>
+          <div><span>📞</span>080-1071-4574</div>
+          <div><span>🕐</span>受付時間 8:00〜18:00（日曜・祝日除く）</div>
+          <div><span>🏢</span>代表：大山健二</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-nav-title">施工案内</div>
+        <ul class="footer-nav-list">
+          <li><a href="service.html">クロス張替・壁紙工事</a></li>
+          <li><a href="service.html">床材施工・フローリング</a></li>
+          <li><a href="service.html">軽量鉄骨下地・ボード工事</a></li>
+          <li><a href="service.html">店舗・オフィス内装工事</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-nav-title">会社情報</div>
+        <ul class="footer-nav-list">
+          <li><a href="company.html">会社概要</a></li>
+          <li><a href="works.html">施工実績</a></li>
+          <li><a href="recruit.html">採用情報</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 大山内装 All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

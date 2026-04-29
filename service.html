@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>施工案内 | 大山内装</title>
+  <meta name="description" content="大山内装の施工案内。クロス張替・床材施工・軽量鉄骨下地・店舗オフィス内装まで幅広く対応。越谷市を中心に埼玉県全域。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --brown:       #3d2b1f;
+      --brown-dark:  #231510;
+      --brown-mid:   #5a3d2b;
+      --accent:      #c8a96e;
+      --accent-light:#e0c48a;
+      --accent-pale: #fdf8f0;
+      --dark:        #1a1a1a;
+      --white:       #ffffff;
+      --off-white:   #f7f4f0;
+      --gray-light:  #ebe7e2;
+      --gray:        #8a7e75;
+      --text:        #2a1f17;
+      --text-light:  #5a4a3f;
+      --serif: 'Noto Serif JP', serif;
+      --sans:  'Noto Sans JP', sans-serif;
+      --display: 'Oswald', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--text); background: var(--white); overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ====== HEADER ====== */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: var(--brown-dark);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.55);
+    }
+    .site-header::after {
+      content: ''; display: block; height: 3px;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 50%, var(--accent) 100%);
+    }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 66px;
+    }
+    .logo a { display: flex; align-items: center; gap: 12px; color: var(--white); }
+    .logo-mark {
+      width: 44px; height: 44px; background: var(--accent);
+      border-radius: 4px; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; box-shadow: 0 2px 10px rgba(200,169,110,0.45);
+    }
+    .logo-mark svg { width: 28px; height: 28px; }
+    .logo-text .company { font-family: var(--serif); font-size: 15px; font-weight: 700; color: white; letter-spacing: 0.05em; }
+    .logo-text .tagline { font-size: 10px; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; margin-top: 2px; }
+    .global-nav ul { display: flex; list-style: none; gap: 2px; }
+    .global-nav a {
+      display: block; padding: 8px 12px; color: rgba(255,255,255,0.78);
+      font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+      border-radius: 3px; transition: all 0.2s;
+    }
+    .global-nav a:hover, .global-nav a.active { color: var(--accent-light); background: rgba(255,255,255,0.07); }
+    .header-cta { display: flex; align-items: center; gap: 16px; }
+    .header-tel { color: white; text-align: right; line-height: 1.2; }
+    .header-tel .tel-label { font-size: 10px; color: rgba(255,255,255,0.5); }
+    .header-tel .tel-num { font-family: var(--display); font-size: 20px; font-weight: 600; letter-spacing: 0.05em; color: var(--accent-light); }
+    .btn-header {
+      background: var(--accent); color: var(--brown-dark);
+      font-size: 12px; font-weight: 700; padding: 10px 18px;
+      border-radius: 3px; letter-spacing: 0.05em; white-space: nowrap; transition: all 0.2s;
+    }
+    .btn-header:hover { background: var(--accent-light); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+    .hamburger span { width: 24px; height: 2px; background: white; border-radius: 2px; display: block; }
+    .mobile-menu { display: none; position: fixed; inset: 0; top: 69px; background: var(--brown-dark); z-index: 999; padding: 40px 24px; flex-direction: column; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { display: block; padding: 18px 0; color: rgba(255,255,255,0.85); font-size: 17px; font-family: var(--serif); border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .mobile-menu .m-tel { margin-top: 28px; color: var(--accent-light); font-family: var(--display); font-size: 26px; font-weight: 600; }
+
+    /* ====== PAGE HERO ====== */
+    .page-hero {
+      margin-top: 69px;
+      background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown) 100%);
+      padding: 72px 24px 64px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(-45deg, transparent, transparent 6px, rgba(200,169,110,0.04) 6px, rgba(200,169,110,0.04) 7px);
+    }
+    .page-hero-inner { position: relative; z-index: 1; }
+    .page-hero-en { font-size: 11px; font-weight: 700; letter-spacing: 0.28em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+    .page-hero-title { font-family: var(--serif); font-size: clamp(26px, 4vw, 42px); font-weight: 700; color: white; letter-spacing: 0.08em; margin-bottom: 14px; }
+    .page-hero-desc { color: rgba(255,255,255,0.75); font-size: 15px; line-height: 1.85; max-width: 560px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; justify-content: center; margin-top: 24px; font-size: 12px; color: rgba(255,255,255,0.5); }
+    .breadcrumb a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--accent-light); }
+    .breadcrumb-sep { opacity: 0.4; }
+
+    /* ====== SERVICE SECTIONS ====== */
+    .service-section { padding: 88px 0; }
+    .service-section:nth-child(even) { background: var(--off-white); }
+    .service-section:nth-child(odd) { background: var(--white); }
+    .service-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+    }
+    .service-layout.reverse { direction: rtl; }
+    .service-layout.reverse > * { direction: ltr; }
+    .service-img {
+      border-radius: 8px; overflow: hidden;
+      box-shadow: 0 8px 40px rgba(61,43,31,0.15);
+      aspect-ratio: 4/3;
+    }
+    .service-img img { width: 100%; height: 100%; object-fit: cover; }
+    .service-tag { display: inline-block; background: var(--accent); color: var(--brown-dark); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; padding: 4px 14px; border-radius: 2px; margin-bottom: 16px; }
+    .service-title { font-family: var(--serif); font-size: clamp(22px, 2.5vw, 30px); font-weight: 700; color: var(--brown); line-height: 1.45; margin-bottom: 16px; letter-spacing: 0.05em; }
+    .service-desc { font-size: 15px; color: var(--text-light); line-height: 1.95; margin-bottom: 28px; }
+    .service-features { list-style: none; margin-bottom: 28px; }
+    .service-features li {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 10px 0; border-bottom: 1px solid var(--gray-light);
+      font-size: 14px; color: var(--text-light); line-height: 1.65;
+    }
+    .service-features li:last-child { border-bottom: none; }
+    .service-features li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .service-price {
+      background: var(--accent-pale); border: 1px solid rgba(200,169,110,0.3);
+      border-radius: 6px; padding: 16px 20px; font-size: 13.5px; color: var(--text-light);
+    }
+    .service-price strong { color: var(--brown); font-family: var(--display); font-size: 18px; }
+
+    /* ====== CTA BAND ====== */
+    .cta-band {
+      background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown) 100%);
+      padding: 64px 24px; text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-band::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(-45deg, transparent, transparent 6px, rgba(200,169,110,0.05) 6px, rgba(200,169,110,0.05) 7px);
+    }
+    .cta-band-inner { position: relative; z-index: 1; }
+    .cta-band-title { font-family: var(--serif); font-size: clamp(22px, 3vw, 32px); font-weight: 700; color: white; margin-bottom: 12px; }
+    .cta-band-title span { color: var(--accent-light); }
+    .cta-band-desc { color: rgba(255,255,255,0.72); font-size: 15px; margin-bottom: 32px; line-height: 1.8; }
+    .cta-band-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; font-size: 15px; font-weight: 700; border-radius: 3px; letter-spacing: 0.05em; transition: all 0.25s; cursor: pointer; border: none; }
+    .btn-primary { background: var(--accent); color: var(--brown-dark); }
+    .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(200,169,110,0.4); }
+    .btn-ghost { background: rgba(255,255,255,0.12); color: white; border: 2px solid rgba(255,255,255,0.4); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.2); }
+
+    /* ====== FOOTER ====== */
+    .site-footer { background: var(--brown-dark); color: rgba(255,255,255,0.7); padding: 64px 0 0; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand .logo-text .company { color: white; font-size: 17px; }
+    .footer-brand .logo-text .tagline { color: rgba(255,255,255,0.5); }
+    .footer-about { font-size: 13.5px; line-height: 1.85; margin-top: 16px; color: rgba(255,255,255,0.6); }
+    .footer-info { margin-top: 20px; font-size: 13px; line-height: 2; }
+    .footer-info span { color: rgba(255,255,255,0.4); margin-right: 8px; }
+    .footer-nav-title { font-family: var(--serif); font-size: 14px; font-weight: 700; color: white; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(200,169,110,0.3); }
+    .footer-nav-list { list-style: none; }
+    .footer-nav-list li { margin-bottom: 10px; }
+    .footer-nav-list a { font-size: 13.5px; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+    .footer-nav-list a:hover { color: var(--accent-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 20px 24px; text-align: center; font-size: 12px; color: rgba(255,255,255,0.4); }
+    .footer-bottom::before { content: ''; display: block; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent)); margin-bottom: 20px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* ====== ANIMATION ====== */
+    .fade-up { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 900px) {
+      .global-nav, .header-cta { display: none; }
+      .hamburger { display: flex; }
+      .service-layout, .service-layout.reverse { grid-template-columns: 1fr; direction: ltr; gap: 36px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 600px) {
+      .service-section { padding: 56px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="index.html">
+        <div class="logo-mark">
+          <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="22" height="22" rx="2" fill="none" stroke="#3d2b1f" stroke-width="2"/>
+            <line x1="3" y1="10" x2="25" y2="10" stroke="#3d2b1f" stroke-width="2"/>
+            <line x1="9" y1="3" x2="9" y2="25" stroke="#3d2b1f" stroke-width="1.5"/>
+            <rect x="12" y="14" width="9" height="8" rx="1" fill="#3d2b1f"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <div class="company">大山内装</div>
+          <div class="tagline">OYAMA INTERIOR CO.</div>
+        </div>
+      </a>
+    </div>
+    <nav class="global-nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="service.html" class="active">施工案内</a></li>
+        <li><a href="works.html">施工実績</a></li>
+        <li><a href="company.html">会社概要</a></li>
+        <li><a href="recruit.html">採用情報</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <div class="header-tel">
+        <div class="tel-label">お気軽にご相談ください</div>
+        <div class="tel-num">080-1071-4574</div>
+      </div>
+      <a href="contact.html" class="btn-header">無料見積</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="toggleMenu()">HOME</a>
+  <a href="service.html" onclick="toggleMenu()">施工案内</a>
+  <a href="works.html" onclick="toggleMenu()">施工実績</a>
+  <a href="company.html" onclick="toggleMenu()">会社概要</a>
+  <a href="recruit.html" onclick="toggleMenu()">採用情報</a>
+  <a href="contact.html" onclick="toggleMenu()">お問い合わせ</a>
+  <div class="m-tel">080-1071-4574</div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner fade-up">
+    <div class="page-hero-en">SERVICES</div>
+    <h1 class="page-hero-title">施工案内</h1>
+    <p class="page-hero-desc">クロス張替から店舗内装まで、内装仕上工事のことなら大山内装にお任せください。</p>
+    <div class="breadcrumb">
+      <a href="index.html">HOME</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>施工案内</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 01: クロス張替 -->
+<section class="service-section">
+  <div class="container">
+    <div class="service-layout fade-up">
+      <div class="service-img">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="クロス張替・壁紙工事">
+      </div>
+      <div class="service-content">
+        <div class="service-tag">SERVICE 01</div>
+        <h2 class="service-title">クロス張替・壁紙工事</h2>
+        <p class="service-desc">壁紙は室内の印象を大きく左右する重要な要素です。大山内装では、既存クロスの撤去から下地処理・新規クロスの施工まで、一貫して丁寧に対応しています。汚れ・傷み・臭いが気になる壁を、美しくリフレッシュします。</p>
+        <ul class="service-features">
+          <li>ビニールクロス・織物クロス・塗り壁調など多種対応</li>
+          <li>下地のパテ処理を丁寧に行い、きれいな仕上がりを実現</li>
+          <li>1室からの小規模工事も対応可能</li>
+          <li>住宅・マンション・店舗・オフィスを問わず対応</li>
+          <li>消臭・抗菌・防カビ機能付き壁紙もご提案可能</li>
+        </ul>
+        <div class="service-price">
+          料金目安：<strong>6畳 ¥30,000〜</strong>（壁面のみ、材料・施工費込み。現地確認後に正式お見積り）
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 02: 床材施工 -->
+<section class="service-section">
+  <div class="container">
+    <div class="service-layout reverse fade-up">
+      <div class="service-img">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80" alt="床材施工・フローリング工事">
+      </div>
+      <div class="service-content">
+        <div class="service-tag">SERVICE 02</div>
+        <h2 class="service-title">床材施工・フローリング工事</h2>
+        <p class="service-desc">傷んだ床材の張替から新築・改装時の新規施工まで幅広く対応します。フローリング・クッションフロア・タイルカーペット・長尺シートなど、用途や予算に合わせて最適な床材をご提案します。</p>
+        <ul class="service-features">
+          <li>無垢フローリング・合板フローリングの新規施工・張替</li>
+          <li>クッションフロア（住宅・水回り対応）の施工</li>
+          <li>店舗向け長尺シート・タイルカーペットの施工</li>
+          <li>既存床の状態診断・下地補修も対応</li>
+          <li>防音・床暖房対応床材のご提案も可能</li>
+        </ul>
+        <div class="service-price">
+          料金目安：<strong>6畳 ¥40,000〜</strong>（フローリング張替、材料・施工費込み。現地確認後に正式お見積り）
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 03: 軽量鉄骨下地 -->
+<section class="service-section">
+  <div class="container">
+    <div class="service-layout fade-up">
+      <div class="service-img">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="軽量鉄骨下地・ボード工事">
+      </div>
+      <div class="service-content">
+        <div class="service-tag">SERVICE 03</div>
+        <h2 class="service-title">軽量鉄骨下地・ボード工事</h2>
+        <p class="service-desc">LGS（軽量鉄骨）と石膏ボードを使った間仕切り・天井下地工事は、店舗やオフィスのレイアウト変更に欠かせない工事です。内装の骨格を作る専門性の高い工程を、確かな技術でお届けします。</p>
+        <ul class="service-features">
+          <li>LGS（軽量鉄骨）スタッド・ランナーによる間仕切り施工</li>
+          <li>石膏ボード・硅酸カルシウム板の張り付け</li>
+          <li>天井下地（野縁・Mバー）の組み立て</li>
+          <li>耐火・防音・防水ボードにも対応</li>
+          <li>設計図に合わせた精度の高い施工を実現</li>
+        </ul>
+        <div class="service-price">
+          料金目安：現地確認・図面確認後にお見積りいたします。お気軽にご相談ください。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 04: 店舗・オフィス内装 -->
+<section class="service-section">
+  <div class="container">
+    <div class="service-layout reverse fade-up">
+      <div class="service-img">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="店舗・オフィス内装工事">
+      </div>
+      <div class="service-content">
+        <div class="service-tag">SERVICE 04</div>
+        <h2 class="service-title">店舗・オフィス内装工事</h2>
+        <p class="service-desc">飲食店・美容室・クリニック・事務所など、商業施設の内装一式に対応しています。開店時の新規施工から改装・原状回復まで、幅広いニーズにお応えします。お客様のイメージを形にするご提案を大切にしています。</p>
+        <ul class="service-features">
+          <li>飲食店・美容室・クリニック・事務所など業種を問わず対応</li>
+          <li>下地工事・クロス・床材・天井仕上げまで一式施工</li>
+          <li>居抜き店舗の改装・スケルトン状態からの新規施工</li>
+          <li>閉店時の原状回復工事にも対応</li>
+          <li>工期・予算に合わせた柔軟な提案が可能</li>
+        </ul>
+        <div class="service-price">
+          料金目安：現地確認・ご要望ヒアリング後にお見積りいたします。まずはお気軽にご相談ください。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-band-inner fade-up">
+    <h2 class="cta-band-title">無料現地確認・<span>お見積りはこちら</span></h2>
+    <p class="cta-band-desc">どんなに小さなご相談でもお気軽にどうぞ。<br>現地確認・お見積りは無料で承ります。</p>
+    <div class="cta-band-btns">
+      <a href="contact.html" class="btn btn-primary" style="font-size:16px; padding:18px 40px;">お問い合わせ・無料見積</a>
+      <a href="tel:08010714574" class="btn btn-ghost" style="font-size:16px; padding:16px 32px;">📞 080-1071-4574</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+            <div class="logo-mark">
+              <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="3" width="22" height="22" rx="2" fill="none" stroke="#3d2b1f" stroke-width="2"/>
+                <line x1="3" y1="10" x2="25" y2="10" stroke="#3d2b1f" stroke-width="2"/>
+                <line x1="9" y1="3" x2="9" y2="25" stroke="#3d2b1f" stroke-width="1.5"/>
+                <rect x="12" y="14" width="9" height="8" rx="1" fill="#3d2b1f"/>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <div class="company">大山内装</div>
+              <div class="tagline">OYAMA INTERIOR CO.</div>
+            </div>
+          </a>
+        </div>
+        <p class="footer-about">埼玉県越谷市を拠点に、クロス張替・床材施工・軽量鉄骨下地・店舗内装まで幅広く対応する内装仕上工事専門店です。丁寧な施工と誠実な対応で、地域のお客様の空間づくりをサポートします。</p>
+        <div class="footer-info">
+          <div><span>📍</span>〒343-0847 埼玉県越谷市大間野町４－３４３－１</div>
+          <div><span>📞</span>080-1071-4574</div>
+          <div><span>🕐</span>受付時間 8:00〜18:00（日曜・祝日除く）</div>
+          <div><span>🏢</span>代表：大山健二</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-nav-title">施工案内</div>
+        <ul class="footer-nav-list">
+          <li><a href="service.html">クロス張替・壁紙工事</a></li>
+          <li><a href="service.html">床材施工・フローリング</a></li>
+          <li><a href="service.html">軽量鉄骨下地・ボード工事</a></li>
+          <li><a href="service.html">店舗・オフィス内装工事</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-nav-title">会社情報</div>
+        <ul class="footer-nav-list">
+          <li><a href="company.html">会社概要</a></li>
+          <li><a href="works.html">施工実績</a></li>
+          <li><a href="recruit.html">採用情報</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 大山内装 All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

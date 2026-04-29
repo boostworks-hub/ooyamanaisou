@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>採用情報 | 大山内装</title>
+  <meta name="description" content="大山内装の採用情報。内装職人（経験者・未経験者歓迎）を募集中。越谷市の内装仕上工事専門店で一緒に働きませんか。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --brown: #3d2b1f; --brown-dark: #231510; --brown-mid: #5a3d2b;
+      --accent: #c8a96e; --accent-light: #e0c48a; --accent-pale: #fdf8f0;
+      --white: #ffffff; --off-white: #f7f4f0; --gray-light: #ebe7e2;
+      --gray: #8a7e75; --text: #2a1f17; --text-light: #5a4a3f;
+      --serif: 'Noto Serif JP', serif; --sans: 'Noto Sans JP', sans-serif; --display: 'Oswald', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--text); background: var(--white); overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* HEADER */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--brown-dark); box-shadow: 0 2px 20px rgba(0,0,0,0.55); }
+    .site-header::after { content: ''; display: block; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent)); }
+    .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 66px; }
+    .logo a { display: flex; align-items: center; gap: 12px; color: var(--white); }
+    .logo-mark { width: 44px; height: 44px; background: var(--accent); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .logo-mark svg { width: 28px; height: 28px; }
+    .logo-text .company { font-family: var(--serif); font-size: 15px; font-weight: 700; color: white; letter-spacing: 0.05em; }
+    .logo-text .tagline { font-size: 10px; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; margin-top: 2px; }
+    .global-nav ul { display: flex; list-style: none; gap: 2px; }
+    .global-nav a { display: block; padding: 8px 12px; color: rgba(255,255,255,0.78); font-size: 13px; font-weight: 500; letter-spacing: 0.04em; border-radius: 3px; transition: all 0.2s; }
+    .global-nav a:hover, .global-nav a.active { color: var(--accent-light); background: rgba(255,255,255,0.07); }
+    .header-cta { display: flex; align-items: center; gap: 16px; }
+    .header-tel { color: white; text-align: right; line-height: 1.2; }
+    .header-tel .tel-label { font-size: 10px; color: rgba(255,255,255,0.5); }
+    .header-tel .tel-num { font-family: var(--display); font-size: 20px; font-weight: 600; letter-spacing: 0.05em; color: var(--accent-light); }
+    .btn-header { background: var(--accent); color: var(--brown-dark); font-size: 12px; font-weight: 700; padding: 10px 18px; border-radius: 3px; letter-spacing: 0.05em; white-space: nowrap; transition: all 0.2s; }
+    .btn-header:hover { background: var(--accent-light); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+    .hamburger span { width: 24px; height: 2px; background: white; border-radius: 2px; display: block; }
+    .mobile-menu { display: none; position: fixed; inset: 0; top: 69px; background: var(--brown-dark); z-index: 999; padding: 40px 24px; flex-direction: column; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { display: block; padding: 18px 0; color: rgba(255,255,255,0.85); font-size: 17px; font-family: var(--serif); border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .mobile-menu .m-tel { margin-top: 28px; color: var(--accent-light); font-family: var(--display); font-size: 26px; font-weight: 600; }
+
+    /* PAGE HERO */
+    .page-hero { margin-top: 69px; background: linear-gradient(135deg, var(--brown-dark), var(--brown)); padding: 72px 24px 64px; text-align: center; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(-45deg, transparent, transparent 6px, rgba(200,169,110,0.04) 6px, rgba(200,169,110,0.04) 7px); }
+    .page-hero-inner { position: relative; z-index: 1; }
+    .page-hero-en { font-size: 11px; font-weight: 700; letter-spacing: 0.28em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+    .page-hero-title { font-family: var(--serif); font-size: clamp(26px, 4vw, 42px); font-weight: 700; color: white; letter-spacing: 0.08em; margin-bottom: 14px; }
+    .page-hero-desc { color: rgba(255,255,255,0.75); font-size: 15px; line-height: 1.85; max-width: 560px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; justify-content: center; margin-top: 24px; font-size: 12px; color: rgba(255,255,255,0.5); }
+    .breadcrumb a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--accent-light); }
+
+    /* APPEAL */
+    .section-appeal { padding: 88px 0; background: var(--brown); }
+    .section-head { text-align: center; margin-bottom: 56px; }
+    .section-en-label { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: var(--accent-light); text-transform: uppercase; margin-bottom: 10px; }
+    .section-title { font-family: var(--serif); font-size: clamp(22px, 3vw, 34px); font-weight: 700; line-height: 1.45; letter-spacing: 0.05em; }
+    .section-title-white { color: white; }
+    .section-title-white span { color: var(--accent-light); }
+    .section-title-dark { color: var(--brown); }
+    .section-title-dark span { color: var(--accent); }
+    .divider { width: 50px; height: 3px; background: var(--accent); margin: 14px auto 0; border-radius: 2px; }
+    .appeal-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .appeal-card {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(200,169,110,0.25);
+      border-radius: 8px; padding: 28px 24px; text-align: center;
+      transition: all 0.25s; position: relative;
+    }
+    .appeal-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent); border-radius: 4px 0 0 4px; }
+    .appeal-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-4px); }
+    .appeal-icon { font-size: 44px; margin-bottom: 16px; }
+    .appeal-title { font-family: var(--serif); font-size: 16px; font-weight: 700; color: white; margin-bottom: 10px; line-height: 1.4; }
+    .appeal-desc { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.8; }
+
+    /* VOICES */
+    .section-voices { padding: 88px 0; background: var(--off-white); }
+    .section-en-label-dark { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+    .voices-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .voice-card {
+      background: white; border-radius: 8px; padding: 32px;
+      box-shadow: 0 3px 20px rgba(61,43,31,0.08);
+      position: relative; border-top: 4px solid var(--accent);
+    }
+    .voice-quote { font-size: 48px; line-height: 1; color: var(--accent); font-family: Georgia, serif; margin-bottom: 12px; }
+    .voice-text { font-size: 14px; color: var(--text-light); line-height: 1.9; margin-bottom: 24px; }
+    .voice-person { display: flex; align-items: center; gap: 14px; padding-top: 20px; border-top: 1px solid var(--gray-light); }
+    .voice-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--brown); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .voice-name { font-family: var(--serif); font-size: 14px; font-weight: 700; color: var(--brown); }
+    .voice-role { font-size: 12px; color: var(--gray); margin-top: 2px; }
+
+    /* JOBS TABLE */
+    .section-jobs { padding: 88px 0; background: white; }
+    .jobs-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 3px 20px rgba(61,43,31,0.08); }
+    .jobs-table tr { border-bottom: 1px solid var(--gray-light); }
+    .jobs-table tr:last-child { border-bottom: none; }
+    .jobs-table th { width: 200px; padding: 20px 24px; background: var(--brown); color: white; font-family: var(--serif); font-size: 14px; font-weight: 600; letter-spacing: 0.05em; text-align: left; vertical-align: top; }
+    .jobs-table td { padding: 20px 24px; font-size: 14.5px; color: var(--text-light); line-height: 1.8; vertical-align: top; }
+    .badge { display: inline-block; background: var(--accent); color: var(--brown-dark); font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 2px; letter-spacing: 0.05em; margin-right: 6px; }
+
+    /* FLOW */
+    .section-flow { padding: 88px 0; background: var(--off-white); background-image: radial-gradient(circle, rgba(61,43,31,0.05) 1px, transparent 1px); background-size: 28px 28px; }
+    .flow-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+    .flow-steps::before { content: ''; position: absolute; top: 36px; left: 12%; right: 12%; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent)); z-index: 0; }
+    .flow-step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+    .flow-step-num { width: 72px; height: 72px; border-radius: 50%; background: var(--brown); border: 3px solid var(--accent); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-family: var(--display); font-size: 24px; font-weight: 700; color: var(--accent-light); }
+    .flow-step-title { font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--brown); margin-bottom: 10px; }
+    .flow-step-desc { font-size: 13px; color: var(--text-light); line-height: 1.75; }
+
+    /* CTA */
+    .cta-band { background: linear-gradient(135deg, var(--brown-dark), var(--brown)); padding: 72px 24px; text-align: center; position: relative; overflow: hidden; }
+    .cta-band::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(-45deg, transparent, transparent 6px, rgba(200,169,110,0.05) 6px, rgba(200,169,110,0.05) 7px); }
+    .cta-band-inner { position: relative; z-index: 1; }
+    .cta-band-label { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; color: var(--accent-light); text-transform: uppercase; margin-bottom: 14px; }
+    .cta-band-title { font-family: var(--serif); font-size: clamp(22px, 3vw, 34px); font-weight: 700; color: white; margin-bottom: 16px; line-height: 1.5; }
+    .cta-band-title span { color: var(--accent-light); }
+    .cta-band-desc { color: rgba(255,255,255,0.72); font-size: 15px; margin-bottom: 36px; line-height: 1.8; }
+    .cta-band-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; font-size: 15px; font-weight: 700; border-radius: 3px; letter-spacing: 0.05em; transition: all 0.25s; cursor: pointer; border: none; }
+    .btn-primary { background: var(--accent); color: var(--brown-dark); }
+    .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(200,169,110,0.4); }
+    .btn-ghost { background: rgba(255,255,255,0.12); color: white; border: 2px solid rgba(255,255,255,0.4); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.2); }
+
+    /* FOOTER */
+    .site-footer { background: var(--brown-dark); color: rgba(255,255,255,0.7); padding: 64px 0 0; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand .logo-text .company { color: white; font-size: 17px; }
+    .footer-brand .logo-text .tagline { color: rgba(255,255,255,0.5); }
+    .footer-about { font-size: 13.5px; line-height: 1.85; margin-top: 16px; color: rgba(255,255,255,0.6); }
+    .footer-info { margin-top: 20px; font-size: 13px; line-height: 2; }
+    .footer-info span { color: rgba(255,255,255,0.4); margin-right: 8px; }
+    .footer-nav-title { font-family: var(--serif); font-size: 14px; font-weight: 700; color: white; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(200,169,110,0.3); }
+    .footer-nav-list { list-style: none; }
+    .footer-nav-list li { margin-bottom: 10px; }
+    .footer-nav-list a { font-size: 13.5px; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+    .footer-nav-list a:hover { color: var(--accent-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 20px 24px; text-align: center; font-size: 12px; color: rgba(255,255,255,0.4); }
+    .footer-bottom::before { content: ''; display: block; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent)); margin-bottom: 20px; }
+
+    /* ANIMATION */
+    .fade-up { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .global-nav, .header-cta { display: none; }
+      .hamburger { display: flex; }
+      .appeal-grid { grid-template-columns: repeat(2, 1fr); }
+      .voices-grid { grid-template-columns: 1fr; }
+      .flow-steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .flow-steps::before { display: none; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .jobs-table th { width: 140px; }
+    }
+    @media (max-width: 600px) {
+      .appeal-grid { grid-template-columns: 1fr; }
+      .flow-steps { grid-template-columns: 1fr; }
+      .jobs-table { display: block; }
+      .jobs-table tr { display: block; margin-bottom: 2px; }
+      .jobs-table th, .jobs-table td { display: block; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="index.html">
+        <div class="logo-mark">
+          <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="22" height="22" rx="2" fill="none" stroke="#3d2b1f" stroke-width="2"/>
+            <line x1="3" y1="10" x2="25" y2="10" stroke="#3d2b1f" stroke-width="2"/>
+            <line x1="9" y1="3" x2="9" y2="25" stroke="#3d2b1f" stroke-width="1.5"/>
+            <rect x="12" y="14" width="9" height="8" rx="1" fill="#3d2b1f"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <div class="company">大山内装</div>
+          <div class="tagline">OYAMA INTERIOR CO.</div>
+        </div>
+      </a>
+    </div>
+    <nav class="global-nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="service.html">施工案内</a></li>
+        <li><a href="works.html">施工実績</a></li>
+        <li><a href="company.html">会社概要</a></li>
+        <li><a href="recruit.html" class="active">採用情報</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <div class="header-tel">
+        <div class="tel-label">お気軽にご相談ください</div>
+        <div class="tel-num">080-1071-4574</div>
+      </div>
+      <a href="contact.html" class="btn-header">無料見積</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="toggleMenu()">HOME</a>
+  <a href="service.html" onclick="toggleMenu()">施工案内</a>
+  <a href="works.html" onclick="toggleMenu()">施工実績</a>
+  <a href="company.html" onclick="toggleMenu()">会社概要</a>
+  <a href="recruit.html" onclick="toggleMenu()">採用情報</a>
+  <a href="contact.html" onclick="toggleMenu()">お問い合わせ</a>
+  <div class="m-tel">080-1071-4574</div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner fade-up">
+    <div class="page-hero-en">RECRUIT</div>
+    <h1 class="page-hero-title">採用情報</h1>
+    <p class="page-hero-desc">内装の仕事に誠実に向き合える方を求めています。経験者・未経験者ともに歓迎します。</p>
+    <div class="breadcrumb">
+      <a href="index.html">HOME</a>
+      <span>›</span>
+      <span>採用情報</span>
+    </div>
+  </div>
+</section>
+
+<!-- APPEAL -->
+<section class="section-appeal">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-en-label">WHY JOIN US</div>
+      <h2 class="section-title section-title-white">大山内装で<span>働く魅力</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="appeal-grid">
+      <div class="appeal-card fade-up">
+        <div class="appeal-icon">🔨</div>
+        <h3 class="appeal-title">確かな技術が身につく</h3>
+        <p class="appeal-desc">クロス・床・下地工事まで幅広い内装技術を習得できます。未経験者も先輩職人のそばで着実にスキルアップ。</p>
+      </div>
+      <div class="appeal-card fade-up" style="transition-delay:0.1s">
+        <div class="appeal-icon">📅</div>
+        <h3 class="appeal-title">週休2日・土日休み相談可</h3>
+        <p class="appeal-desc">日曜・祝日定休。プライベートの時間も確保しやすく、家族との時間を大切にしながら働けます。</p>
+      </div>
+      <div class="appeal-card fade-up" style="transition-delay:0.2s">
+        <div class="appeal-icon">💴</div>
+        <h3 class="appeal-title">実力に応じた給与体系</h3>
+        <p class="appeal-desc">経験・スキルに合わせた日当・月給制。技術が上がれば収入もアップ。頑張りが正当に評価される環境です。</p>
+      </div>
+      <div class="appeal-card fade-up" style="transition-delay:0.3s">
+        <div class="appeal-icon">📍</div>
+        <h3 class="appeal-title">越谷エリアを中心に活躍</h3>
+        <p class="appeal-desc">越谷市を中心とした埼玉県内が主な活動エリア。長距離移動が少なく、体への負担も少ない働き方ができます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICES -->
+<section class="section-voices">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-en-label-dark">VOICE</div>
+      <h2 class="section-title section-title-dark">スタッフの<span>声</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="voices-grid">
+      <div class="voice-card fade-up">
+        <div class="voice-quote">"</div>
+        <p class="voice-text">最初は未経験でクロス張りの「ク」の字も知らない状態でした。でも代表が一つひとつ丁寧に教えてくれて、今では1人で現場を任せてもらえるまでになりました。仕上がりをお客様に喜んでもらえたときが一番うれしいです。</p>
+        <div class="voice-person">
+          <div class="voice-avatar">👷</div>
+          <div>
+            <div class="voice-name">T.K さん（仮名）</div>
+            <div class="voice-role">クロス職人 ／ 入社3年目</div>
+          </div>
+        </div>
+      </div>
+      <div class="voice-card fade-up" style="transition-delay:0.1s">
+        <div class="voice-quote">"</div>
+        <p class="voice-text">前職は全然違う業種でしたが、モノをつくる仕事がしたくて転職しました。内装は「完成した瞬間」が目に見えてわかるのがいいですね。達成感があります。働きやすい職場で、仕事が楽しいと思えるようになりました。</p>
+        <div class="voice-person">
+          <div class="voice-avatar">🧑‍🔧</div>
+          <div>
+            <div class="voice-name">M.S さん（仮名）</div>
+            <div class="voice-role">床材・下地工事担当 ／ 入社2年目</div>
+          </div>
+        </div>
+      </div>
+      <div class="voice-card fade-up" style="transition-delay:0.2s">
+        <div class="voice-quote">"</div>
+        <p class="voice-text">越谷に住んでいるので、地元で働けるのが一番の魅力です。移動時間が短いぶん、体が楽で仕事に集中できます。代表が現場でも気軽に話しかけてくれる雰囲気なので、困ったことがあればすぐ相談できます。</p>
+        <div class="voice-person">
+          <div class="voice-avatar">👩‍🔧</div>
+          <div>
+            <div class="voice-name">A.N さん（仮名）</div>
+            <div class="voice-role">クロス・床材担当 ／ 入社1年目</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOBS TABLE -->
+<section class="section-jobs">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-en-label" style="color:var(--accent);">JOB DETAIL</div>
+      <h2 class="section-title section-title-dark">求人<span>詳細</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="fade-up">
+      <table class="jobs-table">
+        <tr>
+          <th>職種</th>
+          <td>
+            <span class="badge">正社員</span> 内装職人（クロス・床材・下地工事）<br>
+            <span class="badge" style="margin-top:6px;display:inline-block;">パート可</span> アシスタント・補助スタッフも募集中
+          </td>
+        </tr>
+        <tr>
+          <th>雇用形態</th>
+          <td>正社員 ／ パートタイム（要相談）</td>
+        </tr>
+        <tr>
+          <th>給与</th>
+          <td>
+            【正社員】月給 220,000円〜350,000円（経験・スキルにより優遇）<br>
+            【日当制】18,000円〜25,000円<br>
+            ※試用期間3ヶ月あり（給与変動なし）
+          </td>
+        </tr>
+        <tr>
+          <th>勤務時間</th>
+          <td>8:00〜17:00（現場により変動あり）</td>
+        </tr>
+        <tr>
+          <th>休日・休暇</th>
+          <td>日曜日・祝日定休 ／ 年末年始・夏季休暇あり ／ 土曜半休制度あり（相談可）</td>
+        </tr>
+        <tr>
+          <th>勤務地</th>
+          <td>越谷市を中心とした埼玉県内の各現場</td>
+        </tr>
+        <tr>
+          <th>応募資格</th>
+          <td>
+            【経験者歓迎】クロス・床材・内装下地のいずれかの経験がある方<br>
+            【未経験可】やる気・素直さがある方（丁寧に教えます）<br>
+            普通自動車免許（AT可）をお持ちの方歓迎
+          </td>
+        </tr>
+        <tr>
+          <th>待遇・福利厚生</th>
+          <td>交通費実費支給 ／ 道具・作業服支給 ／ 社会保険（要相談） ／ 昇給あり</td>
+        </tr>
+        <tr>
+          <th>選考フロー</th>
+          <td>書類選考 → 面接（1〜2回） → 内定</td>
+        </tr>
+        <tr>
+          <th>お問い合わせ先</th>
+          <td>
+            お電話：<a href="tel:08010714574" style="color:var(--accent);font-weight:700;">080-1071-4574</a>（代表：大山）<br>
+            またはWEBお問い合わせフォームよりご連絡ください
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="section-flow">
+  <div class="container">
+    <div class="section-head fade-up">
+      <div class="section-en-label" style="color:var(--accent);">FLOW</div>
+      <h2 class="section-title section-title-dark">応募の<span>流れ</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step fade-up">
+        <div class="flow-step-num">01</div>
+        <h3 class="flow-step-title">お問い合わせ</h3>
+        <p class="flow-step-desc">お電話またはWEBフォームよりご連絡ください。まずはお気軽にどうぞ。</p>
+      </div>
+      <div class="flow-step fade-up" style="transition-delay:0.1s">
+        <div class="flow-step-num">02</div>
+        <h3 class="flow-step-title">書類選考</h3>
+        <p class="flow-step-desc">履歴書・職務経歴書（任意）をご提出ください。書類は郵送またはメールにて受付中。</p>
+      </div>
+      <div class="flow-step fade-up" style="transition-delay:0.2s">
+        <div class="flow-step-num">03</div>
+        <h3 class="flow-step-title">面接（1〜2回）</h3>
+        <p class="flow-step-desc">代表との面接を行います。現場見学も歓迎。リラックスしてお話しください。</p>
+      </div>
+      <div class="flow-step fade-up" style="transition-delay:0.3s">
+        <div class="flow-step-num">04</div>
+        <h3 class="flow-step-title">内定・入社</h3>
+        <p class="flow-step-desc">内定後、入社日・条件等を相談の上で決定。未経験の方もOJTで丁寧にサポートします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="cta-band-inner fade-up">
+    <div class="cta-band-label">APPLY NOW</div>
+    <h2 class="cta-band-title">一緒に<span>内装の仕事を</span>しませんか</h2>
+    <p class="cta-band-desc">経験者・未経験者どちらも大歓迎。<br>まずはお気軽にお電話またはフォームからご連絡ください。</p>
+    <div class="cta-band-btns">
+      <a href="contact.html" class="btn btn-primary" style="font-size:16px; padding:18px 40px;">WEBで応募する</a>
+      <a href="tel:08010714574" class="btn btn-ghost" style="font-size:16px; padding:16px 32px;">📞 080-1071-4574</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+            <div class="logo-mark">
+              <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="3" width="22" height="22" rx="2" fill="none" stroke="#3d2b1f" stroke-width="2"/>
+                <line x1="3" y1="10" x2="25" y2="10" stroke="#3d2b1f" stroke-width="2"/>
+                <line x1="9" y1="3" x2="9" y2="25" stroke="#3d2b1f" stroke-width="1.5"/>
+                <rect x="12" y="14" width="9" height="8" rx="1" fill="#3d2b1f"/>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <div class="company">大山内装</div>
+              <div class="tagline">OYAMA INTERIOR CO.</div>
+            </div>
+          </a>
+        </div>
+        <p class="footer-about">埼玉県越谷市を拠点に、クロス張替・床材施工・軽量鉄骨下地・店舗内装まで幅広く対応する内装仕上工事専門店です。</p>
+        <div class="footer-info">
+          <div><span>📍</span>〒343-0847 埼玉県越谷市大間野町４－３４３－１</div>
+          <div><span>📞</span>080-1071-4574</div>
+          <div><span>🕐</span>受付時間 8:00〜18:00（日曜・祝日除く）</div>
+          <div><span>🏢</span>代表：大山健二</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-nav-title">施工案内</div>
+        <ul class="footer-nav-list">
+          <li><a href="service.html">クロス張替・壁紙工事</a></li>
+          <li><a href="service.html">床材施工・フローリング</a></li>
+          <li><a href="service.html">軽量鉄骨下地・ボード工事</a></li>
+          <li><a href="service.html">店舗・オフィス内装工事</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-nav-title">会社情報</div>
+        <ul class="footer-nav-list">
+          <li><a href="company.html">会社概要</a></li>
+          <li><a href="works.html">施工実績</a></li>
+          <li><a href="recruit.html">採用情報</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 大山内装 All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

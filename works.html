@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>施工実績 | 大山内装</title>
+  <meta name="description" content="大山内装の施工実績一覧。越谷市・草加市・春日部市などでのクロス張替・床材施工・店舗内装など多数の実績をご紹介します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --brown:       #3d2b1f;
+      --brown-dark:  #231510;
+      --brown-mid:   #5a3d2b;
+      --accent:      #c8a96e;
+      --accent-light:#e0c48a;
+      --accent-pale: #fdf8f0;
+      --white:       #ffffff;
+      --off-white:   #f7f4f0;
+      --gray-light:  #ebe7e2;
+      --gray:        #8a7e75;
+      --text:        #2a1f17;
+      --text-light:  #5a4a3f;
+      --serif: 'Noto Serif JP', serif;
+      --sans:  'Noto Sans JP', sans-serif;
+      --display: 'Oswald', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--text); background: var(--white); overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* HEADER */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--brown-dark); box-shadow: 0 2px 20px rgba(0,0,0,0.55); }
+    .site-header::after { content: ''; display: block; height: 3px; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 50%, var(--accent) 100%); }
+    .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 66px; }
+    .logo a { display: flex; align-items: center; gap: 12px; color: var(--white); }
+    .logo-mark { width: 44px; height: 44px; background: var(--accent); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .logo-mark svg { width: 28px; height: 28px; }
+    .logo-text .company { font-family: var(--serif); font-size: 15px; font-weight: 700; color: white; letter-spacing: 0.05em; }
+    .logo-text .tagline { font-size: 10px; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; margin-top: 2px; }
+    .global-nav ul { display: flex; list-style: none; gap: 2px; }
+    .global-nav a { display: block; padding: 8px 12px; color: rgba(255,255,255,0.78); font-size: 13px; font-weight: 500; letter-spacing: 0.04em; border-radius: 3px; transition: all 0.2s; }
+    .global-nav a:hover, .global-nav a.active { color: var(--accent-light); background: rgba(255,255,255,0.07); }
+    .header-cta { display: flex; align-items: center; gap: 16px; }
+    .header-tel { color: white; text-align: right; line-height: 1.2; }
+    .header-tel .tel-label { font-size: 10px; color: rgba(255,255,255,0.5); }
+    .header-tel .tel-num { font-family: var(--display); font-size: 20px; font-weight: 600; letter-spacing: 0.05em; color: var(--accent-light); }
+    .btn-header { background: var(--accent); color: var(--brown-dark); font-size: 12px; font-weight: 700; padding: 10px 18px; border-radius: 3px; letter-spacing: 0.05em; white-space: nowrap; transition: all 0.2s; }
+    .btn-header:hover { background: var(--accent-light); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+    .hamburger span { width: 24px; height: 2px; background: white; border-radius: 2px; display: block; }
+    .mobile-menu { display: none; position: fixed; inset: 0; top: 69px; background: var(--brown-dark); z-index: 999; padding: 40px 24px; flex-direction: column; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { display: block; padding: 18px 0; color: rgba(255,255,255,0.85); font-size: 17px; font-family: var(--serif); border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .mobile-menu .m-tel { margin-top: 28px; color: var(--accent-light); font-family: var(--display); font-size: 26px; font-weight: 600; }
+
+    /* PAGE HERO */
+    .page-hero { margin-top: 69px; background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown) 100%); padding: 72px 24px 64px; text-align: center; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(-45deg, transparent, transparent 6px, rgba(200,169,110,0.04) 6px, rgba(200,169,110,0.04) 7px); }
+    .page-hero-inner { position: relative; z-index: 1; }
+    .page-hero-en { font-size: 11px; font-weight: 700; letter-spacing: 0.28em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+    .page-hero-title { font-family: var(--serif); font-size: clamp(26px, 4vw, 42px); font-weight: 700; color: white; letter-spacing: 0.08em; margin-bottom: 14px; }
+    .page-hero-desc { color: rgba(255,255,255,0.75); font-size: 15px; line-height: 1.85; max-width: 560px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; justify-content: center; margin-top: 24px; font-size: 12px; color: rgba(255,255,255,0.5); }
+    .breadcrumb a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--accent-light); }
+
+    /* FILTER */
+    .works-filter { background: var(--off-white); padding: 32px 0; border-bottom: 1px solid var(--gray-light); }
+    .filter-inner { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .filter-btn {
+      padding: 10px 22px; border-radius: 3px; font-size: 13px; font-weight: 700;
+      letter-spacing: 0.05em; cursor: pointer; border: 2px solid var(--gray-light);
+      background: white; color: var(--text-light); transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active { background: var(--brown); color: white; border-color: var(--brown); }
+
+    /* WORKS GRID */
+    .works-section { padding: 72px 0; background: white; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .work-card { border-radius: 8px; overflow: hidden; box-shadow: 0 3px 20px rgba(61,43,31,0.1); transition: transform 0.25s, box-shadow 0.25s; }
+    .work-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(61,43,31,0.18); }
+    .work-card-img { height: 220px; overflow: hidden; background: var(--gray-light); position: relative; }
+    .work-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .work-card:hover .work-card-img img { transform: scale(1.07); }
+    .work-label { position: absolute; top: 12px; left: 12px; background: var(--accent); color: var(--brown-dark); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 2px; letter-spacing: 0.08em; }
+    .work-card-body { padding: 22px; background: white; }
+    .work-card-place { font-size: 12px; color: var(--gray); margin-bottom: 6px; }
+    .work-card-title { font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--brown); line-height: 1.45; margin-bottom: 8px; }
+    .work-card-desc { font-size: 13px; color: var(--text-light); line-height: 1.75; }
+    .work-card[data-cat] { transition: all 0.35s; }
+    .work-card.hidden { display: none; }
+
+    /* CTA BAND */
+    .cta-band { background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown) 100%); padding: 64px 24px; text-align: center; position: relative; overflow: hidden; }
+    .cta-band::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(-45deg, transparent, transparent 6px, rgba(200,169,110,0.05) 6px, rgba(200,169,110,0.05) 7px); }
+    .cta-band-inner { position: relative; z-index: 1; }
+    .cta-band-title { font-family: var(--serif); font-size: clamp(22px, 3vw, 32px); font-weight: 700; color: white; margin-bottom: 12px; }
+    .cta-band-title span { color: var(--accent-light); }
+    .cta-band-desc { color: rgba(255,255,255,0.72); font-size: 15px; margin-bottom: 32px; line-height: 1.8; }
+    .cta-band-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; font-size: 15px; font-weight: 700; border-radius: 3px; letter-spacing: 0.05em; transition: all 0.25s; cursor: pointer; border: none; }
+    .btn-primary { background: var(--accent); color: var(--brown-dark); }
+    .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); }
+    .btn-ghost { background: rgba(255,255,255,0.12); color: white; border: 2px solid rgba(255,255,255,0.4); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.2); }
+
+    /* FOOTER */
+    .site-footer { background: var(--brown-dark); color: rgba(255,255,255,0.7); padding: 64px 0 0; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand .logo-text .company { color: white; font-size: 17px; }
+    .footer-brand .logo-text .tagline { color: rgba(255,255,255,0.5); }
+    .footer-about { font-size: 13.5px; line-height: 1.85; margin-top: 16px; color: rgba(255,255,255,0.6); }
+    .footer-info { margin-top: 20px; font-size: 13px; line-height: 2; }
+    .footer-info span { color: rgba(255,255,255,0.4); margin-right: 8px; }
+    .footer-nav-title { font-family: var(--serif); font-size: 14px; font-weight: 700; color: white; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(200,169,110,0.3); }
+    .footer-nav-list { list-style: none; }
+    .footer-nav-list li { margin-bottom: 10px; }
+    .footer-nav-list a { font-size: 13.5px; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+    .footer-nav-list a:hover { color: var(--accent-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 20px 24px; text-align: center; font-size: 12px; color: rgba(255,255,255,0.4); }
+    .footer-bottom::before { content: ''; display: block; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent)); margin-bottom: 20px; }
+
+    /* ANIMATION */
+    .fade-up { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .global-nav, .header-cta { display: none; }
+      .hamburger { display: flex; }
+      .works-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 600px) {
+      .works-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="index.html">
+        <div class="logo-mark">
+          <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="22" height="22" rx="2" fill="none" stroke="#3d2b1f" stroke-width="2"/>
+            <line x1="3" y1="10" x2="25" y2="10" stroke="#3d2b1f" stroke-width="2"/>
+            <line x1="9" y1="3" x2="9" y2="25" stroke="#3d2b1f" stroke-width="1.5"/>
+            <rect x="12" y="14" width="9" height="8" rx="1" fill="#3d2b1f"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <div class="company">大山内装</div>
+          <div class="tagline">OYAMA INTERIOR CO.</div>
+        </div>
+      </a>
+    </div>
+    <nav class="global-nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="service.html">施工案内</a></li>
+        <li><a href="works.html" class="active">施工実績</a></li>
+        <li><a href="company.html">会社概要</a></li>
+        <li><a href="recruit.html">採用情報</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <div class="header-tel">
+        <div class="tel-label">お気軽にご相談ください</div>
+        <div class="tel-num">080-1071-4574</div>
+      </div>
+      <a href="contact.html" class="btn-header">無料見積</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="toggleMenu()">HOME</a>
+  <a href="service.html" onclick="toggleMenu()">施工案内</a>
+  <a href="works.html" onclick="toggleMenu()">施工実績</a>
+  <a href="company.html" onclick="toggleMenu()">会社概要</a>
+  <a href="recruit.html" onclick="toggleMenu()">採用情報</a>
+  <a href="contact.html" onclick="toggleMenu()">お問い合わせ</a>
+  <div class="m-tel">080-1071-4574</div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner fade-up">
+    <div class="page-hero-en">WORKS</div>
+    <h1 class="page-hero-title">施工実績</h1>
+    <p class="page-hero-desc">越谷市・草加市・春日部市を中心に、多数の施工実績をご紹介します。</p>
+    <div class="breadcrumb">
+      <a href="index.html">HOME</a>
+      <span>›</span>
+      <span>施工実績</span>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER -->
+<div class="works-filter">
+  <div class="filter-inner">
+    <button class="filter-btn active" onclick="filterWorks('all', this)">すべて</button>
+    <button class="filter-btn" onclick="filterWorks('cross', this)">クロス張替</button>
+    <button class="filter-btn" onclick="filterWorks('floor', this)">床材施工</button>
+    <button class="filter-btn" onclick="filterWorks('store', this)">店舗内装</button>
+    <button class="filter-btn" onclick="filterWorks('reform', this)">フルリフォーム</button>
+  </div>
+</div>
+
+<!-- WORKS GRID -->
+<section class="works-section">
+  <div class="container">
+    <div class="works-grid" id="worksGrid">
+
+      <div class="work-card fade-up" data-cat="cross">
+        <div class="work-card-img">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="マンションクロス張替 越谷市">
+          <span class="work-label">クロス張替</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-place">📍 埼玉県越谷市</div>
+          <h3 class="work-card-title">マンション全室クロス張替工事</h3>
+          <p class="work-card-desc">築15年のマンション1室（2LDK）の全居室クロスを張替。既存の汚れ・傷んだ壁紙を撤去し、機能性壁紙に一新しました。</p>
+        </div>
+      </div>
+
+      <div class="work-card fade-up" data-cat="store" style="transition-delay:0.05s">
+        <div class="work-card-img">
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80" alt="飲食店内装工事 草加市">
+          <span class="work-label">店舗内装</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-place">📍 埼玉県草加市</div>
+          <h3 class="work-card-title">飲食店の開店内装工事一式</h3>
+          <p class="work-card-desc">居抜き店舗を新規飲食店向けにリノベーション。軽鉄下地・ボード・クロス・床材・天井仕上げまで一式施工しました。</p>
+        </div>
+      </div>
+
+      <div class="work-card fade-up" data-cat="reform" style="transition-delay:0.1s">
+        <div class="work-card-img">
+          <img src="https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=600&q=80" alt="戸建内装リフォーム 春日部市">
+          <span class="work-label">フルリフォーム</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-place">📍 埼玉県春日部市</div>
+          <h3 class="work-card-title">戸建住宅フルリフォーム内装工事</h3>
+          <p class="work-card-desc">築30年の木造戸建全室の内装リフォーム。床・壁・天井すべての素材を刷新し、明るく快適な住空間に生まれ変わりました。</p>
+        </div>
+      </div>
+
+      <div class="work-card fade-up" data-cat="floor" style="transition-delay:0.15s">
+        <div class="work-card-img">
+          <img src="https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?w=600&q=80" alt="フローリング張替 さいたま市">
+          <span class="work-label">床材施工</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-place">📍 埼玉県さいたま市</div>
+          <h3 class="work-card-title">戸建住宅フローリング全室張替</h3>
+          <p class="work-card-desc">経年劣化したフローリングを全室張替。自然な木目の合板フローリングを採用し、傷・汚れも一新。明るい空間に仕上げました。</p>
+        </div>
+      </div>
+
+      <div class="work-card fade-up" data-cat="cross" style="transition-delay:0.2s">
+        <div class="work-card-img">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80" alt="事務所クロス張替 越谷市">
+          <span class="work-label">クロス張替</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-place">📍 埼玉県越谷市</div>
+          <h3 class="work-card-title">事務所・オフィス全面クロス張替</h3>
+          <p class="work-card-desc">移転前のオフィスの原状回復工事として、全壁面のクロスを張替。白系の清潔感ある壁紙で次のテナントも気持ちよく入居できる状態に。</p>
+        </div>
+      </div>
+
+      <div class="work-card fade-up" data-cat="store" style="transition-delay:0.25s">
+        <div class="work-card-img">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="美容室内装工事 越谷市">
+          <span class="work-label">店舗内装</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-place">📍 埼玉県越谷市</div>
+          <h3 class="work-card-title">美容室の新規内装工事一式</h3>
+          <p class="work-card-desc">スケルトン状態から美容室向けに内装を施工。軽鉄間仕切り・石膏ボード・デザインクロス・クッションフロアを組み合わせ、おしゃれな空間に仕上げました。</p>
+        </div>
+      </div>
+
+      <div class="work-card fade-up" data-cat="floor" style="transition-delay:0.3s">
+        <div class="work-card-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="クッションフロア施工 草加市">
+          <span class="work-label">床材施工</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-place">📍 埼玉県草加市</div>
+          <h3 class="work-card-title">水回り・洗面所クッションフロア施工</h3>
+          <p class="work-card-desc">キッチン・洗面・トイレのクッションフロアを張替。防水性の高い素材を選定し、清掃しやすく長持ちする床に仕上げました。</p>
+        </div>
+      </div>
+
+      <div class="work-card fade-up" data-cat="reform" style="transition-delay:0.35s">
+        <div class="work-card-img">
+          <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80" alt="マンションフルリノベ 川口市">
+          <span class="work-label">フルリフォーム</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-place">📍 埼玉県川口市</div>
+          <h3 class="work-card-title">マンションフルリノベーション内装工事</h3>
+          <p class="work-card-desc">築20年の中古マンションを購入後にフルリノベーション。全居室のクロス・床・建具枠まで一新し、まるで新築のような仕上がりになりました。</p>
+        </div>
+      </div>
+
+      <div class="work-card fade-up" data-cat="cross" style="transition-delay:0.4s">
+        <div class="work-card-img">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="アパート退去クロス張替 松伏町">
+          <span class="work-label">クロス張替</span>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-place">📍 埼玉県松伏町</div>
+          <h3 class="work-card-title">アパート退去後の原状回復クロス工事</h3>
+          <p class="work-card-desc">入居者退去後のアパート室内のクロス全面張替。下地補修から丁寧に施工し、次の入居者が気持ちよく使える状態に仕上げました。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-band-inner fade-up">
+    <h2 class="cta-band-title">あなたの空間も<span>大山内装にお任せください</span></h2>
+    <p class="cta-band-desc">小規模な1室のクロス張替から、店舗の全面内装まで。<br>まずはお気軽にご相談ください。</p>
+    <div class="cta-band-btns">
+      <a href="contact.html" class="btn btn-primary" style="font-size:16px; padding:18px 40px;">お問い合わせ・無料見積</a>
+      <a href="tel:08010714574" class="btn btn-ghost" style="font-size:16px; padding:16px 32px;">📞 080-1071-4574</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+            <div class="logo-mark">
+              <svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="3" width="22" height="22" rx="2" fill="none" stroke="#3d2b1f" stroke-width="2"/>
+                <line x1="3" y1="10" x2="25" y2="10" stroke="#3d2b1f" stroke-width="2"/>
+                <line x1="9" y1="3" x2="9" y2="25" stroke="#3d2b1f" stroke-width="1.5"/>
+                <rect x="12" y="14" width="9" height="8" rx="1" fill="#3d2b1f"/>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <div class="company">大山内装</div>
+              <div class="tagline">OYAMA INTERIOR CO.</div>
+            </div>
+          </a>
+        </div>
+        <p class="footer-about">埼玉県越谷市を拠点に、クロス張替・床材施工・軽量鉄骨下地・店舗内装まで幅広く対応する内装仕上工事専門店です。</p>
+        <div class="footer-info">
+          <div><span>📍</span>〒343-0847 埼玉県越谷市大間野町４－３４３－１</div>
+          <div><span>📞</span>080-1071-4574</div>
+          <div><span>🕐</span>受付時間 8:00〜18:00（日曜・祝日除く）</div>
+          <div><span>🏢</span>代表：大山健二</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-nav-title">施工案内</div>
+        <ul class="footer-nav-list">
+          <li><a href="service.html">クロス張替・壁紙工事</a></li>
+          <li><a href="service.html">床材施工・フローリング</a></li>
+          <li><a href="service.html">軽量鉄骨下地・ボード工事</a></li>
+          <li><a href="service.html">店舗・オフィス内装工事</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-nav-title">会社情報</div>
+        <ul class="footer-nav-list">
+          <li><a href="company.html">会社概要</a></li>
+          <li><a href="works.html">施工実績</a></li>
+          <li><a href="recruit.html">採用情報</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 大山内装 All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  function filterWorks(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.work-card').forEach(card => {
+      if (cat === 'all' || card.dataset.cat === cat) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  }
+
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
